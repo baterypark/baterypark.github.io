@@ -164,7 +164,8 @@ nav ul a:hover::after { transform: scaleX(1); }
 .bloch .tip { fill: var(--lime); stroke: var(--ink); stroke-width: 1.5; transform-origin: 160px 160px; animation: precess 7s linear infinite; }
 @keyframes precess { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
 .bloch text { font-family: var(--mono); font-size: 11px; fill: var(--ink); fill-opacity: .7; }
-.caption { text-align: center; font-family: var(--mono); font-size: .72rem; color: var(--ink-soft); letter-spacing: .08em; margin-top: 10px; }
+.caption { text-align: center; font-family: var(--mono); font-size: .7rem; color: var(--ink-soft); letter-spacing: .04em; margin-top: 10px; overflow-wrap: anywhere; }
+.caption sup { font-size: .75em; }
 
 /* ---------- Talks ---------- */
 .talks ol { list-style: none; margin: 0; padding: 0; counter-reset: t; }
@@ -181,17 +182,18 @@ nav ul a:hover::after { transform: scaleX(1); }
 .talks .event a::after { content: " ↗"; font-size: .8em; }
 
 /* ---------- Teams ---------- */
-.team-card { overflow: hidden; }
+.team-card { overflow: hidden; display: flex; flex-direction: column; }
+.team-card .more { margin-top: auto; align-self: flex-start; }
 .team-card.quantum { background: linear-gradient(160deg, var(--bg-card), rgba(87,200,196,0.22)); }
 .team-card.nazca { background: linear-gradient(160deg, var(--bg-card), rgba(255,128,0,0.16)); }
 .team-card h3 { font-size: 1.7rem; }
 .team-card ul { margin: 14px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: .97rem; }
 .team-card li { margin: 6px 0; }
-.team-card .more { display: inline-block; margin-top: 18px; font-size: .9rem; border-bottom: 1px solid var(--ink); }
+.team-card .more { display: inline-block; padding-top: 18px; font-size: .9rem; border-bottom: 1px solid var(--ink); }
 .team-card .more:hover { color: var(--orange); border-color: var(--orange); }
 
 /* Peru network */
-.net { margin-top: 18px; width: 100%; height: 90px; }
+.net { margin-top: 18px; width: 100%; height: 90px; flex: none; }
 .net .node { fill: var(--teal); animation: pulse 2.6s ease-in-out infinite; }
 .net .node:nth-child(2n) { animation-delay: .8s; }
 .net .node:nth-child(3n) { animation-delay: 1.5s; }
@@ -200,14 +202,14 @@ nav ul a:hover::after { transform: scaleX(1); }
 @keyframes dash { to { stroke-dashoffset: -80 } }
 
 /* track + car (scroll driven) */
-.track { position: relative; height: 70px; margin-top: 18px; }
-.track .road { position: absolute; left: 0; right: 0; top: 40px; height: 3px; background: var(--ink); opacity: .35; border-radius: 2px; }
+.track { position: relative; height: 90px; margin-top: 18px; flex: none; }
+.track .road { position: absolute; left: 0; right: 0; top: 52px; height: 3px; background: var(--ink); opacity: .35; border-radius: 2px; }
 .track .road::before, .track .road::after {
   content: ""; position: absolute; top: -8px; width: 3px; height: 19px; background: repeating-linear-gradient(var(--ink) 0 4px, transparent 4px 8px);
 }
 .track .road::before { left: 0 } .track .road::after { right: 0 }
-.track .car { position: absolute; top: 14px; left: 0; width: 84px; transform: translateX(0); transition: transform .08s linear; }
-.track .flag { position: absolute; right: -4px; top: 6px; font-size: 1.3rem; }
+.track .car { position: absolute; top: 26px; left: 0; width: 84px; transform: translateX(0); transition: transform .08s linear; }
+.track .flag { position: absolute; right: -4px; top: 18px; font-size: 1.3rem; }
 
 /* ---------- Projects ("Garage") ---------- */
 .garage .card { min-height: 170px; display: flex; flex-direction: column; }
@@ -280,7 +282,8 @@ footer .stars { font-size: 1rem; letter-spacing: .1em; }
 .tile.c7 { background: linear-gradient(135deg, #15204B, #8a96c9); }
 .tile.c8 { background: linear-gradient(135deg, #FF8000, #15204B); }
 /* book spine look */
-.tile.book { width: 72px; height: 96px; margin: 0 auto; border-radius: 4px 10px 10px 4px; box-shadow: inset 6px 0 0 rgba(255,255,255,0.18); }
+.tile.book { width: 62px; height: 100px; margin: 0 auto; border-radius: 3px 8px 8px 3px; box-shadow: 0 2px 6px rgba(21,32,75,0.15); background: var(--bg-card); padding: 0; }
+.tile.book img { object-fit: contain; }
 /* electronics icon tile */
 .tile.chip-ic { background: var(--ink); color: var(--lime); font-family: var(--mono); font-size: 1.4rem; }
 .artists { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
